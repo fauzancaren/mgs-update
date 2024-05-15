@@ -15,5 +15,16 @@ $routes->get('/logout', 'App::logout');
 $routes->get('/darkmode/(:any)', 'App::darkmode/$1');
 
 $routes->get('/admin/dashboard', 'App::dashboard', ['filter' => 'auth']); 
-$routes->get('/admin/toko', 'App::toko', ['filter' => 'auth']);
+
+$routes->get('/admin/toko', 'App::toko', ['filter' => 'auth']); 
+$routes->post('/admin/toko/get', 'Datatable::gettoko', ['filter' => 'auth']);
+
 $routes->get('/admin/karyawan', 'App::karyawan', ['filter' => 'auth']);
+$routes->post('/admin/karyawan/get', 'Datatable::getkaryawan', ['filter' => 'auth']);
+
+$routes->get('/admin/vendor', 'App::vendor', ['filter' => 'auth']);
+$routes->post('/admin/vendor/get', 'Datatable::getvendor', ['filter' => 'auth']);
+
+
+
+

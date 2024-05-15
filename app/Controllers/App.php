@@ -55,6 +55,7 @@ class App extends BaseController
         echo 'Session set!';
         return;
     }
+
     function dashboard(){    
         $data["_title"] = "MGS-ERP | Dashboard";
         $data["_menu"] = "Dashboard";
@@ -69,5 +70,10 @@ class App extends BaseController
         $data["_title"] = "MGS-ERP | Master Karyawan";
         $data["_menu"] = "Karyawan";
         echo $this->template('app/karyawan',$data);
+    }
+    function vendor(){    
+        $data["_title"] = "MGS-ERP | Master Vendor";
+        $data["_menu"] = "Vendor";
+        echo $this->template('app/vendor',$data);
     }
 }

@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"> 
+    <!--
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet" />  
+    -->
+    
+	<link href="<?= base_url("assets/fonts/material-icon-sharp/material-icon-sharp.css") ?>" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/images/icon.png') ?>">
      
 	<link href="<?= base_url("assets/fontawesome5/css/all.min.css") ?>" rel="stylesheet" type="text/css">
@@ -13,6 +18,7 @@
 	<link href="<?= base_url("assets/sweetalert/dist/sweetalert2.min.css") ?>" rel="stylesheet" type="text/css"> 
 	<link href="<?= base_url("assets/select2/css/select2.min.css") ?>" rel="stylesheet" type="text/css">
 	<link href="<?= base_url("assets/datepicker/daterangepicker.css") ?>" rel="stylesheet" type="text/css">
+    
 
 
 
@@ -27,11 +33,12 @@
 	<script src="<?= base_url("assets/jquery/jquery.moment.min.js") ?>"></script>
 	<script src="<?= base_url("assets/datepicker/daterangepicker.js") ?>"></script>
 
+    <!--
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet" /> 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.1/viewer.min.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.1/viewer.min.js"></script>
-	
+    -->
+	<link href="<?= base_url("assets/fonts/poppins/poppins.css") ?>" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url("assets/css/mainmenu.css")?>">
     
     <title><?= $_title ?></title>
@@ -75,9 +82,13 @@
                     <span class="material-icons-sharp">
                     group
                     </span>
-                    <h3>Karyawan</h3>
+                    <h3>Karyawan</h3> 
+                <a href="<?= base_url("admin/vendor")?>" class="<?= $_menu == "Vendor" ? "active" : "" ?>">
+                    <span class="material-icons-sharp">
+                    storefront
+                    </span>
+                    <h3>Vendor</h3>
                 </a>
-
                 <a href="<?= base_url("admin/petugas")?>" class="<?= $_menu == "Petugas" ? "active" : "" ?>">
                     <span class="material-icons-sharp">
                     category
@@ -90,12 +101,6 @@
                     </span> 
                     <h3>Pelanggan</h3>
                 </a> 
-                <a href="<?= base_url("admin/info")?>" class="<?= $_menu == "Info" ? "active" : "" ?>">
-                    <span class="material-icons-sharp">
-                    storefront
-                    </span>
-                    <h3>Vendor</h3>
-                </a>
 
                 <!-- Pemakaian -->
                 <span class="head-menu"> 

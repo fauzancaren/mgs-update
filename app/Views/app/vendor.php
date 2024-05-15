@@ -1,6 +1,6 @@
 <!-- Main Content -->
 <main>
-    <h1>MASTER - TOKO</h1>
+    <h1>MASTER - VENDOR</h1>
     <div class="recent-orders">  
         <div class="row">
             <div class="col-lg-6 col-12"> 
@@ -53,7 +53,7 @@
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "<?php echo base_url('admin/toko/get') ?>",
+            "url": "<?php echo base_url('admin/vendor/get') ?>",
             "type": "POST",
             "data": function(data) {
                 data.search['value'] = $('#tb_search').val(); 
