@@ -4,7 +4,7 @@
 use CodeIgniter\Controller;
 
 use App\Models\StoreDatatable; 
-use App\Models\karyawanDatatable; 
+use App\Models\KaryawanDatatable; 
 use App\Models\VendorDatatable; 
 
 use Config\Services;
@@ -45,7 +45,7 @@ class Datatable extends BaseController
     public function getkaryawan()
     {
         $request = Services::request();
-        $datatable = new karyawanDatatable($request);
+        $datatable = new KaryawanDatatable($request);
 
         if ($request->getMethod(true) === 'POST') {
             $lists = $datatable->getDatatables();

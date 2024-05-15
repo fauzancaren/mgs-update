@@ -89,11 +89,11 @@
                     </span>
                     <h3>Vendor</h3>
                 </a>
-                <a href="<?= base_url("admin/petugas")?>" class="<?= $_menu == "Petugas" ? "active" : "" ?>">
+                <a href="<?= base_url("admin/produk")?>" class="<?= $_menu == "Petugas" ? "active" : "" ?>">
                     <span class="material-icons-sharp">
                     category
                     </span>
-                    <h3>Item Master</h3>
+                    <h3>Produk</h3>
                 </a>
                 <a href="<?= base_url("admin/pelanggan")?>" class="<?= $_menu == "Pelanggan" ? "active" : "" ?>">
                     <span class="material-icons-sharp">
