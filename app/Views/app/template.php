@@ -38,9 +38,8 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.1/viewer.min.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.1/viewer.min.js"></script>
     -->
-	<link href="<?= base_url("assets/fonts/poppins/poppins.css") ?>" rel="stylesheet" type="text/css">
+	<link href="<?= base_url("assets/fonts/poppins/poppins.css") ?>" rel="stylesheet" type="text/css"> 
     <link rel="stylesheet" href="<?= base_url("assets/css/mainmenu.css")?>">
-    
     <title><?= $_title ?></title>
 </head>
 
