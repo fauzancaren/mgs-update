@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller; 
 use App\Models\database\TblMsWorkplace; 
+use App\Models\database\TblMsEmployee; 
 class AppMessage extends BaseController
 {
     function toko_add(){
@@ -79,8 +80,18 @@ class AppMessage extends BaseController
     }
 
     function karyawan_add(){
+        $path = 'assets/images/users.png';
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $dataimg = file_get_contents($path);
+        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($dataimg);
+        $data["MsEmpImage"] = $base64;
+
         $model = new TblMsWorkplace(); 
         $data["TblMsWorkplace"] = $model->get_store();
+
+        $model1 = new TblMsEmployee(); 
+        $data["MsEmpCode"] = $model1->get_next_code();
+        
         $data_html = view("app/message/karyawanadd",$data);
         echo $data_html;
     }

@@ -13,7 +13,7 @@
                             <label class="cabinet p-auto">
                                 <input type="file" class="form-control item-img file d-none" id="MsEmpImageFile" name="MsEmpImageFile" accept="image/*">
                                 <figure>
-                                    <img src="<?= base_url("assets/images/users.png") ?>"  class="img-circular m-auto" id="MsEmpImage" name="MsEmpImage" width="150" height="150"/>
+                                    <img src="<?= $MsEmpImage ?>"  class="img-circular m-auto" id="MsEmpImage" name="MsEmpImage" width="150" height="150"/>
                                     <figcaption class="text-center"><i class="fas fa-camera"></i>&nbsp; Change</figcaption>
                                 </figure>
                             </label>
@@ -31,7 +31,7 @@
                         <div class="row mb-1 align-items-center">
                             <label for="MsEmpCode" class="col-sm-3 col-form-label">Kode<sup class="error">&nbsp;*</sup></label>
                             <div class="col-sm-9">
-                                <input id="MsEmpCode" name="MsEmpCode" type="text" class="form-control form-control-sm" value="" readonly>
+                                <input id="MsEmpCode" name="MsEmpCode" type="text" class="form-control form-control-sm" value="<?= $MsEmpCode ?>" readonly>
                             </div>
                         </div>
                         <div class="row mb-1 align-items-center">
@@ -77,15 +77,15 @@
                             </div>
                         </div>
                         <div class="row mb-1 align-items-center">
-                            <label for="MsEmpTlp" class="col-sm-3 col-form-label">No. Whatsap</label>
+                            <label for="MsEmpWhatsapp" class="col-sm-3 col-form-label">No. Whatsap</label>
                             <div class="col-sm-9">
-                                <input id="MsEmpTlp" name="MsEmpTlp" type="text" class="form-control form-control-sm input-phone" value="">
+                                <input id="MsEmpWhatsapp" name="MsEmpWhatsapp" type="text" class="form-control form-control-sm input-phone" value="">
                             </div>
                         </div>
                         <div class="row mb-1 align-items-center">
                             <label for="MsEmpTlp" class="col-sm-3 col-form-label">No. Telp</label>
                             <div class="col-sm-9">
-                                <input id="MsEmpTlp" name="MsEmpTlp" type="text" class="form-control form-control-sm input-phone" value="">
+                                <input id="MsEmpTlp" name="MsEmpTlp" type="text" class="form-control form-control-sm number-hp" value="">
                             </div>
                         </div>
                         <div class="row mb-1 align-items-center">
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                         <div class="row mb-1 align-items-center  d-none">
-                            <label for="MsWorkplaceId" class="col-sm-3 col-form-label">Akses</label>
+                            <label for="MsEmpMode" class="col-sm-3 col-form-label">Akses</label>
                             <div class="col-sm-9">
                                 <select class="form-select form-select-sm" id="MsEmpMode" name="MsEmpMode" style="width: 100%">
                                     ';
@@ -198,6 +198,11 @@
 </div>
 	
 <script>  
+    var cleave = new Cleave('#MsEmpWhatsapp', {
+        prefix: '62',
+        phone: true,
+        phoneRegionCode: 'ID'
+    });
     $('.number-hp').toArray().forEach(function(field){
         new Cleave(field, {
             phone: true,
@@ -321,21 +326,11 @@
     // --------------------------------------------      End upload preview image
 
 
-    var req_status_add = 0;
-    var datesCollection = document.getElementsByClassName("input-phone");
-    var phones = Array.from(datesCollection);
-
-    phones.forEach(function (phone) {
-        new Cleave(phone, {
-            phone: true,
-            phoneRegionCode: "ID"
-        })
-    });
+    var req_status_add = 0; 
 
     $("#btn-submit").click(function(){ 
-
         //validasi
-        if($("#MsWorkplaceCode").val() == "" ) {
+        if($("#MsEmpCode").val() == "" ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Data Belum Lengkap',
@@ -345,7 +340,7 @@
             });
             return false
         }
-        if($("#MsWorkplaceName").val() == "" ) {
+        if($("#MsEmpName").val() == "" ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Data Belum Lengkap',
@@ -355,7 +350,7 @@
             });
             return false
         }
-        if($("#MsWorkplaceAddress").val() == "" ) {
+        if($("#MsEmpNip").val() == "" ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Data Belum Lengkap',
@@ -365,7 +360,7 @@
             });
             return false
         }
-        if($("#MsWorkplaceTelp1").val() == "" ) {
+        if($("#MsEmpBirthPlace").val() == "" ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Data Belum Lengkap',
@@ -375,7 +370,7 @@
             });
             return false
         }
-        if($("#MsWorkplaceTelp2").val() == "" ) {
+        if($("#MsEmpBirthDate").val() == "" ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Data Belum Lengkap',
@@ -385,13 +380,105 @@
             });
             return false
         } 
-        if($("#MsWorkplaceEmail").val() == "" ) {
+        if($("#MsEmpGender").val() == "" ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Data Belum Lengkap',
                 text: "Silahkan Masukan No Hp terlebih dahulu",
                 // showConfirmButton: false,
                 // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsEmpWhatsapp").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu",
+                // showConfirmButton: false,
+                // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsEmpTlp").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu",
+                // showConfirmButton: false,
+                // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsEmpEmail").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu",
+                // showConfirmButton: false,
+                // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsEmpAddress").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu",
+                // showConfirmButton: false,
+                // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsEmpAddress").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu",
+                // showConfirmButton: false,
+                // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsEmpStartWork").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu",
+                // showConfirmButton: false,
+                // timer: 1500
+            });
+            return false
+        } 
+        if($("#MsWorkplaceId").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu", 
+            });
+            return false
+        } 
+        if($("#MsEmpBank").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu", 
+            });
+            return false
+        } 
+        if($("#MsEmpRekNo").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu", 
+            });
+            return false
+        } 
+        if($("#MsEmpRekName").val() == "" ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Data Belum Lengkap',
+                text: "Silahkan Masukan No Hp terlebih dahulu", 
             });
             return false
         } 
