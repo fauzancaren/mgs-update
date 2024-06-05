@@ -39,12 +39,15 @@
             <tbody></tbody>
         </table>
         <div class="d-flex justify-content-center pt-4"> 
-            <button class="btn btn-sm btn-primary" id="add-account">Tambah Data</button> 
+            <button class="btn btn-sm btn-primary" id="add-karyawan">Tambah Data</button> 
         </div>
     </div> 
+    
+    <div id="dialog-box"></div>
 </main>
 
 <script>
+    var req_status;
     var table = $('#table_data').DataTable({
         "responsive": true,
         "searching": false,
@@ -84,4 +87,27 @@
     $('#tb_row').change(function() {
         table.page.len(parseInt($('#tb_row').val())).draw();
     });
+
+    
+    $("#add-karyawan").click(function(e) {
+        e.preventDefault();
+        if (!req_status) {
+            $.ajax({
+                url: "<?php echo base_url('admin/karyawan/add') ?>",
+                beforeSend: function() {
+                    req_status = 1;
+                },
+                success: function(response) {
+                    $("#dialog-box").html(response);
+                    modal_action = new bootstrap.Modal(document.getElementById('modal-action'));
+                    modal_action.show();
+                    req_status = 0;
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                    req_status = 0;
+                }
+            });
+        }
+    })
 </script>

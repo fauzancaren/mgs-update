@@ -187,7 +187,7 @@ aside{
 aside .toggle{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 1.4rem;
 }
 
@@ -233,7 +233,7 @@ aside .sidebar a{
     height: 2.5rem;
     gap: 1rem;
     position: relative;
-    margin-left: 2rem;
+    margin-left: 1.75rem;
     transition: all 0.3s ease;
 }
 
@@ -271,62 +271,62 @@ aside .sidebar a.active span{
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
-  }
+}
   
-  #infowindow-content .title {
-    font-weight: bold;
-  }
-  
-  #infowindow-content {
-    display: none;
-  }
-  
-  #map #infowindow-content {
-    display: inline;
-  }
-  
-  
-  #map {
-    height: 100%;
-  }
-  
-  #map .centerButton {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    margin-top: -65px;
-  
-    background-color: #ff6600;
-    border-radius: 0.25rem;
-    padding: 0.2rem 0.2rem;
-    color: white;
-    font-weight: 600;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #map .centerButton:hover {
-    background-color: #ec6208;
-    color: #f2d2d2;
-    transition: background-color 0.3s;
-  }
-  
-  #map .centerMarker {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 42px;
-    background-image: url('image/obi-erp/pin-shadow.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-  
-  }
+#infowindow-content .title {
+font-weight: bold;
+}
 
+#infowindow-content {
+display: none;
+}
+
+#map #infowindow-content {
+display: inline;
+}
+
+
+#map {
+height: 100%;
+}
+
+#map .centerButton {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 1;
+margin-top: -65px;
+
+background-color: #ff6600;
+border-radius: 0.25rem;
+padding: 0.2rem 0.2rem;
+color: white;
+font-weight: 600;
+font-size: 12px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+#map .centerButton:hover {
+background-color: #ec6208;
+color: #f2d2d2;
+transition: background-color 0.3s;
+}
+
+#map .centerMarker {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 28px;
+height: 42px;
+background-image: url('../images/obi-erp/pin-shadow.svg');
+background-position: center center;
+background-repeat: no-repeat;
+
+}
+ 
 /* 
 .btn.dropdown-toggle {
   border:none;
@@ -342,7 +342,7 @@ aside .sidebar a.active span{
     -webkit-filter: drop-shadow(0px 6px 2px rgba(0, 0, 0, .5));
     filter: drop-shadow(0px 6px 2px rgba(0, 0, 0, .5));
     filter: color(red);
-    background: url('image/obi-erp/pin.svg') no-repeat center;
+    background: url('../images/obi-erp/pin.svg') no-repeat center;
     content: "";
     position: absolute;
     bottom: 50%;
@@ -739,8 +739,119 @@ main .recent-orders a{
     padding: 8px 16px;
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    background: url('image/obi-erp/bg-map.png') center center / cover no-repeat var(--color-background);
+    background: url('../images/obi-erp/bg-map.png') center center / cover no-repeat var(--color-background);
 }
+.swal2-popup{
+    background: var(--color-white);
+}
+.swal2-title{
+    color: var(--color-dark-variant);
+}
+.swal2-styled.swal2-confirm{
+    background-color:#6C9BCF
+}
+.swal2-styled.swal2-confirm:focus{
+    box-shadow: 0 0 0 3px rgb(180 216 255);
+}
+
+.form-check-input:checked {
+    background-color: #6c9bcf;
+    border-color: #476486;
+}
+
+span.label-dialog {
+    background: #6c9bcf;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.small-box {
+    border-radius: .25rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+ }
+ 
+ .small-box>.inner {
+    padding: 10px;
+ }
+ 
+ .small-box h3,
+ .small-box p {
+    z-index: 5;
+ }
+ 
+ .small-box h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    padding: 0;
+    white-space: nowrap;
+ }
+ 
+ .small-box p {
+    font-size: 20px;
+ }
+ 
+ .small-box h3,
+ .small-box p {
+    z-index: 5;
+ }
+ 
+ .small-box>.small-box-footer {
+    background-color: rgba(0, 0, 0, .1);
+    color: rgba(255, 255, 255, .8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+ }
+ 
+ .small-box .icon>i.ion {
+    font-size: 70px;
+    top: 20px;
+ }
+ 
+ .small-box .icon>i {
+    font-size: 90px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear, -webkit-transform .3s linear;
+ }
+ 
+ .small-box .icon {
+    color: rgba(0, 0, 0, .15);
+    z-index: 0;
+ }
+ 
+ .small-box>.small-box-footer:hover {
+    background-color: rgba(0, 0, 0, .15);
+    color: #fff;
+ }
+
+ #upload-demo{
+	width: 25rem;
+	height: 25rem;
+  padding-bottom:25px;
+}
+
+.img-circular {
+    width: 150;
+    height: 150;
+    background-size: cover;
+    display: block;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+ }
+ 
 @media screen and (max-width: 1200px) { 
     .home-body{
         width: 95%;
@@ -783,7 +894,7 @@ main .recent-orders a{
     main .recent-orders table{
         width: 83vw;
     }
-
+    /*
     main table thead tr th:last-child,
     main table thead tr th:first-child{
         display: none;
@@ -792,7 +903,7 @@ main .recent-orders a{
     main table tbody tr td:last-child,
     main table tbody tr td:first-child{
         display: none;
-    }
+    }*/
 
 }
 

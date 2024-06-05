@@ -18,6 +18,7 @@
 	<link href="<?= base_url("assets/sweetalert/dist/sweetalert2.min.css") ?>" rel="stylesheet" type="text/css"> 
 	<link href="<?= base_url("assets/select2/css/select2.min.css") ?>" rel="stylesheet" type="text/css">
 	<link href="<?= base_url("assets/datepicker/daterangepicker.css") ?>" rel="stylesheet" type="text/css">
+	<link href="<?= base_url("assets/croppie/croppie.css") ?>" rel="stylesheet" type="text/css">
     
 
 
@@ -32,6 +33,7 @@
 	<script src="<?= base_url("assets/select2/js/select2.full.min.js") ?>"></script> 
 	<script src="<?= base_url("assets/jquery/jquery.moment.min.js") ?>"></script>
 	<script src="<?= base_url("assets/datepicker/daterangepicker.js") ?>"></script>
+	<script src="<?= base_url("assets/croppie/croppie.js") ?>"></script>
 
     <!--
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -105,11 +107,17 @@
                 <span class="head-menu"> 
                     <h3>Penjualan</h3>
                 </span>
-                <a href="<?= base_url("admin/pemakaian")?>" class="<?= $_menu == "Pemakaian" ? "active" : "" ?>">
+                <a href="<?= base_url("admin/sales-barang")?>" class="<?= $_menu == "Pemakaian" ? "active" : "" ?>">
                     <span class="material-icons-sharp">
                     shopping_cart
                     </span>
-                    <h3>Penjualan</h3>
+                    <h3>Barang</h3>
+                </a>  
+                <a href="<?= base_url("admin/sales-jasa")?>" class="<?= $_menu == "Pemakaian" ? "active" : "" ?>">
+                    <span class="material-icons-sharp">
+                    shopping_cart
+                    </span>
+                    <h3>Jasa</h3>
                 </a>  
  
                 <!-- Pemakaian -->
