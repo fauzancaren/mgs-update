@@ -33,5 +33,8 @@ $routes->get('/admin/vendor', 'App::vendor', ['filter' => 'auth']);
 $routes->post('/admin/vendor/get', 'Datatable::getvendor', ['filter' => 'auth']);
 
 
+$routes->get('/admin/pelanggan', 'App::pelanggan', ['filter' => 'auth']);
+
+
 
 

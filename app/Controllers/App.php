@@ -76,4 +76,9 @@ class App extends BaseController
         $data["_menu"] = "Vendor";
         echo $this->template('app/vendor',$data);
     }
+    function pelanggan(){    
+        $data["_title"] = "MGS-ERP | Master Pelanggan";
+        $data["_menu"] = "Pelanggan";
+        echo $this->template('app/pelanggan',$data);
+    }
 }
